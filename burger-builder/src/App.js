@@ -15,9 +15,9 @@ class App extends Component {
     //console.log('was clicked!');
     //this.state.persons[0].name = 'Mayankho';
     this.setState({persons :[
-      {name: 'Max', age: 28},
+      {name: 'Davido', age: 28},
       {name: 'Yankho', age: 22},
-      {name: 'Stephanie', age: 29}
+      {name: 'Stephiepoo', age: 29}
     ]})
   }
 
