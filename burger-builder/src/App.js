@@ -12,14 +12,22 @@ class App extends Component {
 
     showPersons: false
   }
-
   nameChangedHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex(p => {
+      return p.id === id
+    });
+
+    const person = {...this.state.persons[personIndex]};
+
+    person.name= event.target.value
+
+    const persons = [...this.state.persons];
+    persons[personIndex] = person;
+    // const person = Object.assign({}, this.state.persons[PersonIndex])
+
+
     this.setState({
-      persons: [
-        {name: 'Maxy', age: 28 },
-        {name: event.target.value, age: 22 },
-        {name: 'Stephiepoo', age: 29 }
-      ]
+      persons: persons
     })
 
   }
@@ -48,7 +56,8 @@ class App extends Component {
   render() {
 
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white' , 
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -58,6 +67,8 @@ class App extends Component {
     }
 
     let persons = null;
+
+    //If this is true then you will be ap=ble to see yor people
 
     if (this.state.showPersons){
       persons =(
@@ -72,16 +83,23 @@ class App extends Component {
              />
           })}
       </div>
-
       );
+      style.backgroundColor = 'red'; // this comes after you conditional so that is its true it  will be red
+    }
+    let classes = [];
+    if (this.state.persons.length <= 2) {
+      classes.push('red'); //Classes = ["red"]
+    }
+    if (this.state.persons.length <= 1 ){
+      classes.push('bold') // Classes = ['red', 'bold']
     }
 
-
-
     return (
+      // Treat this as javascript this  is just an array, treat like an array
+      //
       <div className="App">
         <h1>My react app!</h1>
-        <p>:This is really working oh my god!!</p>
+        <p className = {classes.join(' ')}> It's alive</p> 
         <button
           onClick={this.togglePersonHandler}
           style={style}
