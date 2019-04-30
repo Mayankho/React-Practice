@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -24,7 +24,6 @@ class App extends Component {
     const persons = [...this.state.persons];
     persons[personIndex] = person;
     // const person = Object.assign({}, this.state.persons[PersonIndex])
-
 
     this.setState({
       persons: persons
@@ -53,8 +52,8 @@ class App extends Component {
 
   }
 // Everything inside of the render function gets re rendered every time react render again.
+//Everything inside render gets shown on the view
   render() {
-
     const style = {
       backgroundColor: 'green',
       color: 'white' , 
@@ -62,10 +61,6 @@ class App extends Component {
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer',
-    
-      
-      
-      
     }
 
     let persons = null;
@@ -91,18 +86,18 @@ class App extends Component {
       
       // this comes after you conditional so that is its true it  will be red
     }
-    let classes = [];
+    let assignedClasses = [];
     if (this.state.persons.length <= 2) {
-      classes.push('red'); //Classes = ["red"]
+      assignedClasses.push(classes.red); //Classes = ["red"]
     }
     if (this.state.persons.length <= 1 ){
-      classes.push('bold') // Classes = ['red', 'bold']
+      assignedClasses.push(classes.bold) // Classes = ['red', 'bold']
     }
 
     return (
-        <div className="App">
+        <div className= {classes.App}>
         <h1>My react app!</h1>
-        <p className = {classes.join(' ')}> It's alive</p> 
+        <p className = {assignedClasses.join(' ')}> It's alive</p> 
         <button
           onClick={this.togglePersonHandler}
           style={style}
