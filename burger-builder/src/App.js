@@ -45,6 +45,8 @@ class App extends Component {
       padding: '8px', 
       cursor: 'pointer', 
       fontsize :'20px'
+      //testing my commits 
+      
     
 
     }
