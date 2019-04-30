@@ -5,20 +5,20 @@ import Person from './Person/Person';
 class App extends Component {
   state = {
     persons: [
-      { name: 'Max', age: 28 },
-      { name: 'Yankho', age: 22 },
-      { name: 'Stephanie', age: 26 }
+      { id : 1,name: 'Max', age: 28 },
+      { id : 2,name: 'Yankho', age: 22 },
+      { id : 3,name: 'Stephanie', age: 26 }
     ],
 
     showPersons: false
   }
 
-  nameChangedHandler = (event) => {
+  nameChangedHandler = (event, id) => {
     this.setState({
       persons: [
-        { id : 'jkjs',name: 'Maxy', age: 28 },
-        { id : 'ljsdfkhdfk',name: event.target.value, age: 22 },
-        { id : 'jhfeiyrkdjie',name: 'Stephiepoo', age: 29 }
+        {name: 'Maxy', age: 28 },
+        {name: event.target.value, age: 22 },
+        {name: 'Stephiepoo', age: 29 }
       ]
     })
 
@@ -68,6 +68,7 @@ class App extends Component {
             name = {person.name}
             age = {person.age}
             key = {person.id}
+            changed = {(event) => this.nameChangedHandler(event, person.id)}
              />
           })}
       </div>
