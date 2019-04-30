@@ -5,78 +5,93 @@ import Person from './Person/Person';
 class App extends Component {
   state = {
     persons: [
-      {name: 'Max', age: 28},
-      {name: 'Yankho', age: 22},
-      {name: 'Stephanie', age: 26}
-    ]
-  }
+      { name: 'Max', age: 28 },
+      { name: 'Yankho', age: 22 },
+      { name: 'Stephanie', age: 26 }
+    ],
 
-
- 
-
-
-
-  switchNameHandler = (newName) => {
-    // a click ={this.switchNameHandler}ny parargups any area were the par
-    //console.log('was clicked!');
-    //this.state.persons[0].name = 'Mayankho';
-    this.setState({persons :[
-      {name: newName, age: 28},
-      {name: 'Yankho', age: 22},
-      {name: 'Stephiepoo', age: 29}
-    ]})
+    showPersons: false
   }
 
   nameChangedHandler = (event) => {
-    this.setState({persons :[
-      {name: 'Maxy', age: 28},
-      {name: event.target.value, age: 22},
-      {name: 'Stephiepoo', age: 29}
-    ]})
-    
+    this.setState({
+      persons: [
+        { id : 'jkjs',name: 'Maxy', age: 28 },
+        { id : 'ljsdfkhdfk',name: event.target.value, age: 22 },
+        { id : 'jhfeiyrkdjie',name: 'Stephiepoo', age: 29 }
+      ]
+    })
+
   }
 
+  deletPersonHandler = (personIndex) => {
+
+    // const persons = this.state.persons.slice(); //This is only holding a pointer, did not set a new value, 
+    const persons = [...this.state.persons];
+    persons.splice(personIndex, 1); // This removes one element forom the array
+    this.setState({persons : persons})// This was the one eleent that was spliced state
+
+  }
+
+
+  togglePersonHandler = () => {
+
+    const doesShow = this.state.showPersons;
+    this.setState({ showPersons: !doesShow });
+
+    //
+
+    //this makes sure that the this keyword will always be returned back to that clas
+
+  }
+// Everything inside of the render function gets re rendered every time react render again.
   render() {
 
-    const style  = {
+    const style = {
       backgroundColor: 'white',
-      font : 'inherit',
-      border: '1px solid blue', 
-      padding: '8px', 
-      cursor: 'pointer', 
-      fontsize :'20px'
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer',
+      fontsize: '20px'
       //testing my commits 
-      
-    
+    }
 
+    let persons = null;
+
+    if (this.state.showPersons){
+      persons =(
+        <div>
+          {this.state.persons.map((person, index) => {
+            return <Person 
+            click={() => this.deletPersonHandler(index)}
+            name = {person.name}
+            age = {person.age}
+            key = {person.id}
+             />
+          })}
+      </div>
+
+      );
     }
 
 
 
     return (
       <div className="App">
-      <h1>My react app!</h1>
-      <p>:This is really working oh my god!!</p>
-      <button 
-      onClick= {this.switchNameHandler.bind(this,'Maxxy')}
-      style = {style}
-      >Switch Name</button>
-      <Person name ={this.state.persons[0].name} age={this.state.persons[0].age} 
-      click ={this.switchNameHandler} 
-      />
-      <Person name ={this.state.persons[1].name} age={this.state.persons[1].age} 
-      click ={this.switchNameHandler.bind(this, 'Yaya')}
-      changed = {this.nameChangedHandler}
-      >My hobbies is fishing</Person>
-      <Person name ={this.state.persons[2].name} age={this.state.persons[2].age} 
-      click ={this.switchNameHandler} 
-      />
-      
+        <h1>My react app!</h1>
+        <p>:This is really working oh my god!!</p>
+        <button
+          onClick={this.togglePersonHandler}
+          style={style}
+        >Toggle Persons </button>
+        {persons}
+       
          </div>
     );
-      // All elements that are lower case are resered for the native javascript variables
+    // All elements that are lower case are resered for the native javascript variables
     // return React.createElement('div', {className: 'App'}, React.createElement('h1',null, 'Hi , im a react app!!!'))
-   }
+  }
 }
 
 
