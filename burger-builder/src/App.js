@@ -62,13 +62,15 @@ class App extends Component {
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer',
-      fontsize: '20px'
-      //testing my commits 
+    
+      
+      
+      
     }
 
     let persons = null;
 
-    //If this is true then you will be ap=ble to see yor people
+    //If this is true then you will be able to see your people data
 
     if (this.state.showPersons){
       persons =(
@@ -84,7 +86,10 @@ class App extends Component {
           })}
       </div>
       );
-      style.backgroundColor = 'red'; // this comes after you conditional so that is its true it  will be red
+      
+     
+      
+      // this comes after you conditional so that is its true it  will be red
     }
     let classes = [];
     if (this.state.persons.length <= 2) {
@@ -95,9 +100,7 @@ class App extends Component {
     }
 
     return (
-      // Treat this as javascript this  is just an array, treat like an array
-      //
-      <div className="App">
+        <div className="App">
         <h1>My react app!</h1>
         <p className = {classes.join(' ')}> It's alive</p> 
         <button
@@ -107,11 +110,15 @@ class App extends Component {
         {persons}
        
          </div>
+      // Treat this as javascript this  is just an array, treat like an array
+      //
+      
     );
     // All elements that are lower case are resered for the native javascript variables
     // return React.createElement('div', {className: 'App'}, React.createElement('h1',null, 'Hi , im a react app!!!'))
   }
-}
 
+}
+}
 
 export default App;

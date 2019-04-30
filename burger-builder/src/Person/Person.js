@@ -2,8 +2,9 @@ import React from 'react';
 import './Person.css';
 
 const person = (props) => {
+  
     return (
-        <div className = "Person">
+        <div className = "Person" >
             <p onClick = {props.click}> I am {props.name} and i am {props.age} years old!</p> 
             <p>{props.children}</p>
             <input type ='text' onChange = {props.changed} value = {props.name}/>
@@ -16,4 +17,4 @@ const person = (props) => {
     //This return is turned into react create element, thats why we import react!
 };
 
-export default person
+export default person;
