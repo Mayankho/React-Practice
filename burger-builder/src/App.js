@@ -39,7 +39,7 @@ class App extends Component {
     this.setState({persons : persons})// This was the one eleent that was spliced state
 
   }
-
+// 
 
   togglePersonHandler = () => {
 
@@ -66,6 +66,8 @@ class App extends Component {
     let persons = null;
 
     //If this is true then you will be able to see your people data
+    
+
 
     if (this.state.showPersons){
       persons =(
@@ -81,14 +83,13 @@ class App extends Component {
           })}
       </div>
       );
-      
-     
-      
+   
       // this comes after you conditional so that is its true it  will be red
     }
     let assignedClasses = [];
     if (this.state.persons.length <= 2) {
-      assignedClasses.push(classes.red); //Classes = ["red"]
+      assignedClasses.push(classes.red); //Classes = ["red"], 
+
     }
     if (this.state.persons.length <= 1 ){
       assignedClasses.push(classes.bold) // Classes = ['red', 'bold']
