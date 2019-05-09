@@ -38,7 +38,7 @@ class App extends Component {
     persons.splice( personIndex, 1 );
     this.setState( { persons: persons } );
   }
-
+// This function acts as a on and off switch.  
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
     this.setState( { showPersons: !doesShow } );
