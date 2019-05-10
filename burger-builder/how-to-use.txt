@@ -7,3 +7,17 @@ How to use the downloaded files
 ? Google that to get am idea or grip.
 
 Compare my code to yours to solve issues you might encounter. You may also copy the content of src/ into your own project's src/ folder to use your project setup (which might've been created with a different create-react-app version) and still use my code.
+
+
+
+                Questions?
+
+1. How do you dynamically add and delete styles inside your jsx code?
+2. What are Css modules, name a few of them. 
+
+    -> This is a feature that we leverage to scope our css classNames and animation names locally.
+
+3. How do Css modules help and make you life easier
+    -> Css modules help by adding scope to your CSS to nerar components. They turn css classenames into variables
+    ->ALLowing them to be used dynamically.
+    ->This is a compiler and this helps by rendering the css, as a local object

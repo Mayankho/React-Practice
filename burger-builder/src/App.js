@@ -73,11 +73,7 @@ class App extends Component {
       assignedClasses.push( classes.bold ); // classes = ['red', 'bold']
     }
 
-    
-  //   return (
-    
-
-  //     <div cl dont's need to have any of the  classses again, it 's not bneede  e
+  
     return (
         <div className={classes.App}>
           <h1>Hi, I'm a React App</h1>
