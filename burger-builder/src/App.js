@@ -16,7 +16,8 @@ class App extends Component {
   nameChangedHandler = ( event, id ) => {
     const personIndex = this.state.persons.findIndex( p => {
       return p.id === id;
-    } );
+    
+    }, );
 
     const person = {
       ...this.state.persons[personIndex]
@@ -57,7 +58,7 @@ class App extends Component {
               name={person.name}
               age={person.age}
               key={person.id}
-              changed={( event ) => this.nameChangedHandler( event, person.id )} />
+              changed={( event ) =>  (this.nameChangedHandler( event, person.id ))} />
           } )}
         </div>
       );

@@ -1,7 +1,6 @@
 .App {
   text-align: center;
 }
-
 .red {
   color: red;
 }
@@ -9,7 +8,7 @@
 .bold {
   font-weight: bold;
 }
-
+/*This is for every button nested inside the app classs */
 .App button {
   border: 1px solid blue;
   padding: 16px;
