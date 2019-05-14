@@ -7,7 +7,7 @@ import Cockpit from '../components/cockpit/Cockpit';
 class App extends Component {
   constructor(props) {
     super(props);
-    console.log('App.js inside of construtctor', props)
+    console.log('App.js is inside the constructor below props', props)
     this.state = {
       persons: [
         { id: 'asfa1', name: 'Max', age: 28 },
@@ -21,11 +21,11 @@ class App extends Component {
   
 
   componentWillMount() {
-    console.log("App inside of component will mount");
+    console.log("App.js will mount");
   }
 
   componentDidMount() {
-    console.log('App is in component did mount');
+    console.log('App.js has been mounted');
   }
 
   // state = {
@@ -38,15 +38,19 @@ class App extends Component {
   //   showPersons: false
   // }
 
-
-
-
   //onChangeHandler
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
+      console.log(event);
       return p.id === id;
-
+      
     });
+
+    //Questons? -> It's returning the id before, app.js gets a chance to get rendered again.
+
+    
+
+  
 
     const person = {
       ...this.state.persons[personIndex]
@@ -75,9 +79,9 @@ class App extends Component {
     this.setState({ showPersons: !doesShow });
   }
 
-
+// So what we have is person  being  called on first then you haave the cockpit coming in hot in the second place
   render() {
-    console.log('App.js is inside of render');
+    console.log('App.js has been rendered!');
     let persons = null;
 
 

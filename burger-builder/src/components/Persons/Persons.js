@@ -22,8 +22,22 @@ class Persons extends React.Component{
   componentDidMount() {
     console.log('Persons is in component did mount');
   }
+
+  componentWillReceiveProps(nextProp){
+    console.log(" [!Update!] Person.js, Inside of componentWillRecieveProps")
+  }
+
+  shouldComponentUpdate(nextProps, nextState){
+   //I predict his code is not going to work  
+   console.log("It's' going to update because props is a different object!!!")
+      return nextProps.persons !== this.props.person;
+    }
+    //What object is props from either and both sides why, does clickin it make it work?
+    // Every time you click and update it will forward, person.js in a new render
+  
+
   render(){
-    console.log('Person.js inside render')
+    console.log('Persons.js has been rendered again')
     return this.props.persons.map( (person ,index ) => {
       return <Person
       click={() => this.props.clicked(index)}

@@ -13,6 +13,8 @@ Compare my code to yours to solve issues you might encounter. You may also copy 
                 Questions?
 
 1. How do you dynamically add and delete styles inside your jsx code?
+    -> 
+
 2. What are Css modules, name a few of them. 
 
     -> This is a feature that we leverage to scope our css classNames and animation names locally.
@@ -21,3 +23,31 @@ Compare my code to yours to solve issues you might encounter. You may also copy 
     -> Css modules help by adding scope to your CSS to nerar components. They turn css classenames into variables
     ->ALLowing them to be used dynamically.
     ->This is a compiler and this helps by rendering the css, as a local object
+
+
+4.What is a higher order component and how do they help.
+    -> What and how is error boundary used a and how can it help people?
+    ->  It's used as a higheer order componmnet.
+    -> 
+
+
+5. What should go into it's own compnonent
+
+     -> Whatever you want customized to your own needs.
+     -> Anything that has a personilzed element with it should get its own component
+
+6. Name a couple lifecycle methods and what they do?
+
+    -> componentDidMount - This is when the compnent is getting mounted after you render it, \
+    -> componentWillMount - This is between the render is made, some feel like this is a good tome to access and call 
+     -- Upon Api's and accessing the backend for your app
+
+7. Turned person and persons in to stateful components why?
+    ->
+
+8. What is the syntax for creating state in side of a stateful compnonent?
+    ->
+
+9. What does it mean to not cause any side effects
+
+10. How did adding a cockpit help the code's visibility and flow?
