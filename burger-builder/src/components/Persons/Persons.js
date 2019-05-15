@@ -32,6 +32,11 @@ class Persons extends React.Component{
    console.log("It's' going to update because props is a different object!!!")
       return nextProps.persons !== this.props.person;
     }
+
+    componentWillUpdate(nextProps, nextState){
+      console.log("Person.js will update", nextProps, nextState)
+    }
+    
     //What object is props from either and both sides why, does clickin it make it work?
     // Every time you click and update it will forward, person.js in a new render
   
