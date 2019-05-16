@@ -5,7 +5,7 @@ const cockpit = (props) => {
 
     // Use more functionsa comonens  they cant mangae state bt are very very needed
     // You can not manage state in every single comppnonents, And use the class based componetns less if possibee
-    //This is goign to be use d twith statelsees or statfeul conmene fe
+    //This is going to be use d twith statelsees or statfeul conmenet 
 
     const assignedClasses = [];
     let btnClass = '';

@@ -33,10 +33,19 @@ class Persons extends React.Component{
       return nextProps.persons !== this.props.person;
     }
 
+
     componentWillUpdate(nextProps, nextState){
       console.log("Person.js will update", nextProps, nextState)
     }
-    
+
+    componentDidUpdate(){
+      console.log('Person.js has Updated')
+    }
+
+   
+
+
+    //CDU --> This doesn't recieve the new props and the new state because it has already updateed already.
     //What object is props from either and both sides why, does clickin it make it work?
     // Every time you click and update it will forward, person.js in a new render
   
@@ -55,6 +64,6 @@ class Persons extends React.Component{
 }  
 
 
-//Close the fucking tag jesus christ 
+
 
 export default Persons; //export defaulut you idiot!

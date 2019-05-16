@@ -28,6 +28,23 @@ class App extends Component {
     console.log('App.js has been mounted');
   }
 
+   shouldComponentUpdate(nextProps, nextState){
+   // Futtena, etc change, 
+   //I predict his code, challenger 
+
+   console.log("[App.js] Inside shouldComponentUpdate")
+      return nextProps.persons !== this.props.person;
+    }
+
+
+    componentWillUpdate(nextProps, nextState){
+      console.log("Person.js will update", nextProps, nextState)
+    }
+
+    componentDidUpdate(){
+      console.log('Person.js has Updated')
+    }
+    
   // state = {
   //   persons: [
   //     { id: 'asfa1', name: 'Max', age: 28 },
@@ -38,6 +55,7 @@ class App extends Component {
   //   showPersons: false
   // }
 
+
   //onChangeHandler
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
@@ -46,11 +64,6 @@ class App extends Component {
     });
 
     //Questons? -> It's returning the id before, app.js gets a chance to get rendered again.
-
-    
-
-  
-
     const person = {
       ...this.state.persons[personIndex]
     };
@@ -79,6 +92,7 @@ class App extends Component {
   }
 
 // So what we have is person  being  called on first then you haave the cockpit coming in hot in the second place
+
   render() {
     console.log('App.js has been rendered!');
     let persons = null;
