@@ -28,11 +28,12 @@ class Persons extends React.Component{
   }
 
   shouldComponentUpdate(nextProps, nextState){
-   //I predict his code is not going to work  
    console.log("It's' going to update because props is a different object!!!")
-      return nextProps.persons !== this.props.person;
+      // return nextProps.persons !== this.props.person;
+      return true;
     }
 
+    //Top  down to match my ceilings 
 
     componentWillUpdate(nextProps, nextState){
       console.log("Person.js will update", nextProps, nextState)

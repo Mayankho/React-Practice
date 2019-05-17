@@ -7,7 +7,7 @@ import Cockpit from '../components/cockpit/Cockpit';
 class App extends Component {
   constructor(props) {
     super(props);
-    console.log('App.js is inside the constructor below props', props)
+    console.log('App.js is inside the constructor, props is in the bottom', props)
     this.state = {
       persons: [
         { id: 'asfa1', name: 'Max', age: 28 },
@@ -29,28 +29,23 @@ class App extends Component {
   }
 
    shouldComponentUpdate(nextProps, nextState){
-   // Futtena, etc change, 
-   //I predict his code, challenger 
-
-   console.log("[App.js] Inside shouldComponentUpdate")
-      return nextProps.persons !== this.props.person;
+   console.log("[App.js] Inside shouldComponentUpdate",nextProps,nextState)
+      return true;
     }
-
-
     componentWillUpdate(nextProps, nextState){
-      console.log("Person.js will update", nextProps, nextState)
+      console.log("[App.js] will update", nextProps, nextState)
     }
 
     componentDidUpdate(){
-      console.log('Person.js has Updated')
+      console.log('[Appp.js] has Updated and is didUpdate')
     }
-    
+
   // state = {
   //   persons: [
   //     { id: 'asfa1', name: 'Max', age: 28 },
   //     { id: 'vasdf1', name: 'Manu', age: 29 },
   //     { id: 'asdf11', name: 'Stephanie', age: 26 }
-  //   ],
+  //   ]
   //   otherState: 'some other value',
   //   showPersons: false
   // }
@@ -76,13 +71,16 @@ class App extends Component {
     persons[personIndex] = person;
 
     this.setState({ persons: persons });
-  } //End 
-
-
+  } 
+  //End 
   deletePersonHandler = (personIndex) => {
     // const persons = this.state.persons.slice();
     const persons = [...this.state.persons];
+
+      //make a new variable persons, with all the persons on the state 
+      //then use splice in the array,takes in person Index and one
     persons.splice(personIndex, 1);
+      //then it sets state with the new state, and then state i updated
     this.setState({ persons: persons });
   }
   // This function acts as a on and off switch.  
@@ -90,8 +88,7 @@ class App extends Component {
     const doesShow = this.state.showPersons;
     this.setState({ showPersons: !doesShow });
   }
-
-// So what we have is person  being  called on first then you haave the cockpit coming in hot in the second place
+  // So what we have is person  being  called on first then you haave the cockpit coming in hot in the second place
 
   render() {
     console.log('App.js has been rendered!');
@@ -109,6 +106,7 @@ class App extends Component {
 
     return (
       <div className={classes.App}>
+      <button onClick = {() => {this.setState({showPersons: true})}}>Show Persons</button>
         <Cockpit showPersons={this.state.showPersons}
           appTitle={this.props.title}
 
@@ -117,9 +115,6 @@ class App extends Component {
         {persons}
       </div>
     );
-
-
-    // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
 
