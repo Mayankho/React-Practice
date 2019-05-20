@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/cockpit/Cockpit';
 
 
-class App extends Component {
+class App extends PureComponent {
   constructor(props) {
     super(props);
     console.log('App.js is inside the constructor, props is in the bottom', props)
@@ -28,15 +28,15 @@ class App extends Component {
     console.log('App.js has been mounted');
   }
 
-   shouldComponentUpdate(nextProps, nextState){
-   console.log("[App.js] Inside shouldComponentUpdate",nextProps,nextState)
-      return nextState.persons !== this.state.persons || 
-      nextState.showPersons !== this.state.showPersons ||
-      nextProps.clicked !== this.props.clicked;
-      // This checks if there is a difference 
-      // between the two and returns it if it remains true that something has changed
-      // If you remove a person it will run through the updating process.
-    }
+  //  shouldComponentUpdate(nextProps, nextState){
+  //  console.log("[App.js] Inside shouldComponentUpdate",nextProps,nextState)
+  //     return nextState.persons !== this.state.persons || 
+  //     nextState.showPersons !== this.state.showPersons ||
+  //     nextProps.clicked !== this.props.clicked;
+  //     // This checks if there is a difference 
+  //     // between the two and returns it if it remains true that something has changed
+  //     // If you remove a person it will run through the updating process.
+  //   }
     componentWillUpdate(nextProps, nextState){
       console.log("[App.js] will update", nextProps, nextState)
     }
