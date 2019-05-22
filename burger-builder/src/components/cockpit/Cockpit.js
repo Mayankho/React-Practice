@@ -5,7 +5,7 @@ const cockpit = (props) => {
 
     // Use more functionsa comonens  they cant mangae state bt are very very needed
     // You can not manage state in every single comppnonents, And use the class based componetns less if possibee
-    //This is going to be use d twith statelsees or statfeul conmenet 
+    //This is going to be used with stateless or statfeul component.
 
     const assignedClasses = [];
     let btnClass = classes.Button;
@@ -20,7 +20,7 @@ const cockpit = (props) => {
 
 
     return (
-        <div className = {classes.Cockpit}>
+        <div>
             <h1>{props.appTitle}</h1>
             {console.log(props)};
         
