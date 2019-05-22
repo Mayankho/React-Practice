@@ -8,8 +8,8 @@ const cockpit = (props) => {
     //This is going to be use d twith statelsees or statfeul conmenet 
 
     const assignedClasses = [];
-    let btnClass = '';
-    btnClass = classes.red;
+    let btnClass = classes.Button;
+    btnClass = [classes.red, classes.Red].join(' '); 
 
     if ( props.persons.length <= 2 ) {
       assignedClasses.push( classes.red ); // classes = ['red']
@@ -31,6 +31,8 @@ const cockpit = (props) => {
         </div>
     );
 };
-// cannot return multiple elements without a root node.
+// Cannot return multiple elements without a root node.
+// --> If, the similar, Test, JS, Have time.
+// Panorama
 
 export default cockpit;

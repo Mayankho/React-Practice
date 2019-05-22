@@ -32,10 +32,8 @@ class Person extends React.Component{
                 <p>{this.props.children}</p>
                 <input type="text" onChange={this.props.changed} value={this.props.name} />
             </div>
-            // I have no longer use this ever since in started using persons. 
         )
+        // You can not return arrays, 
     }
 }
-// If you wanded to throw an eroor message it wouldend up here 
-
 export default Person;
