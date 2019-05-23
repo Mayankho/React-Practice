@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Cockpit.css';
+import Aux from '../hoc/Auxilary';
 
 const cockpit = (props) => {
 
@@ -20,15 +21,15 @@ const cockpit = (props) => {
 
 
     return (
-        <div>
-            <h1>{props.appTitle}</h1>
+      <Aux>
+        <h1>{props.appTitle}</h1>
             {console.log(props)};
         
           <p className={assignedClasses.join( ' ' )}>This is really working!</p> 
           <button
             className={btnClass}
             onClick={props.clicked}>Toggle Persons</button>
-        </div>
+      </Aux>
     );
 };
 // Cannot return multiple elements without a root node.

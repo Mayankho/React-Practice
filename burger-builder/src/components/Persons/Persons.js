@@ -34,7 +34,6 @@ class Persons extends React.Component{
       nextProps.changed !== this.props.changed || 
       nextProps.clicked !== this.props.clicked;
       // return true; this up top  is saying if what is changed on any of the new upsate s then  it will not 
-      //
     } 
 
     componentWillUpdate(nextProps, nextState){
@@ -63,7 +62,7 @@ class Persons extends React.Component{
       changed = {(event) => this.props.changed(event, person.id)} />
     });
   }
-  
+
 }  
 
 

@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/cockpit/Cockpit';
+import WithClass from '../components/hoc/WithClass';
 
 
 class App extends PureComponent {
@@ -110,7 +111,8 @@ class App extends PureComponent {
     }
 
     return (
-      <div className={classes.App}>
+      // Use a higher order component, to get the classes app.
+      <WithClass classes = {classes.App}>
       <button onClick = {() => {this.setState({showPersons: true})}}
       className = 'showPersons'
       >Show Persons</button>
@@ -120,7 +122,7 @@ class App extends PureComponent {
           persons={this.state.persons}
           clicked={this.togglePersonsHandler} />
         {persons}
-      </div>
+      </WithClass>
     );
   }
 }
