@@ -4,7 +4,7 @@ import Aux from '../hoc/Auxilary';
 
 const cockpit = (props) => {
 
-    // Use more functionsa comonens  they cant mangae state bt are very very needed
+    // Use more function comonens  they cant mangae state bt are very very needed
     // You can not manage state in every single comppnonents, And use the class based componetns less if possibee
     //This is going to be used with stateless or statfeul component.
 
@@ -19,21 +19,21 @@ const cockpit = (props) => {
       assignedClasses.push( classes.bold ); // classes = ['red', 'bold']
     }
 
-
     return (
+
       <Aux>
         <h1>{props.appTitle}</h1>
             {console.log(props)};
-        
           <p className={assignedClasses.join( ' ' )}>This is really working!</p> 
           <button
             className={btnClass}
             onClick={props.clicked}>Toggle Persons</button>
       </Aux>
+
     );
 };
 // Cannot return multiple elements without a root node.
 // --> If, the similar, Test, JS, Have time.
-// Panorama
+// Panorama, why did i write in this in the fucking code. 
 
 export default cockpit;
