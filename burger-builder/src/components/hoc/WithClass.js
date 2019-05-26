@@ -1,9 +1,10 @@
 import  React from 'react';
 
-
+//props = persons.css 
 const withClass = (props) => (
 
     <div className={props.classes}>
+        {console.log(props, 'We are in withClass')};
         {props.children}
     </div>
 
