@@ -1,5 +1,0 @@
-Episode --> 94 
-    * Changed the node of app div to a higher order component, with classes app, coming in as a prop.
-    * What is the difference in doing it this way as opposed to, having the root node as it was, 
-    ---> What are the benefits of doing it this way.
-    --->    * It doesn't do anything different, it is just an example.
