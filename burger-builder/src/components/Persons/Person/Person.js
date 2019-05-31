@@ -1,7 +1,8 @@
 import React from 'react';
 
 import classes from './Person.css';
-import WithClass from '../../../components/hoc/WithClass';
+import withClass from '../../hoc/withClass';
+import Aux from '../../../components/hoc/Auxilary';
 // If not imported you will lose the card look.
 
 
@@ -28,13 +29,14 @@ class Person extends React.Component{
       }
     render(){
         return (      
-            <WithClass classes ={classes.person}>
-
-                <p onClick={this.props.click}>I'm {this.props.name} and I am {this.props.age} years old!</p>
+            <Aux>
+               <p onClick={this.props.click}>I'm {this.props.name} and I am {this.props.age} years old!</p>
                 <p>{this.props.children}</p>
                 <input type="text" onChange={this.props.changed} value={this.props.name} />
-            </WithClass>
+            </Aux>
+
+               
         )
     }
 }
-export default Person;
+export default withClass(Person, classes.person);
