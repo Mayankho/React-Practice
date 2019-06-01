@@ -33,7 +33,7 @@ class Persons extends React.Component{
       return nextProps.persons !== this.props.person || 
       nextProps.changed !== this.props.changed || 
       nextProps.clicked !== this.props.clicked;
-      // return true; this up top  is saying if what is changed on any of the new upsate s then  it will not 
+      // return true; this is giving a standard for what nees to be true for state to update 
     } 
 
     componentWillUpdate(nextProps, nextState){
@@ -48,7 +48,7 @@ class Persons extends React.Component{
 
 
     //CDU --> This doesn't recieve the new props and the new state because it has already updateed already.
-    // With every new change there will bean new render
+    // With every new change there will bean new render.
   
 
   render(){

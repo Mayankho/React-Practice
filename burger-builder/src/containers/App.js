@@ -3,6 +3,7 @@ import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/cockpit/Cockpit';
 import Aux from '../components/hoc/Auxilary';
+import withClass from '../components/hoc/withClass';
 
 
 class App extends PureComponent {
@@ -129,4 +130,4 @@ class App extends PureComponent {
   }
 }
 
-export default App;
+export default withClass(App, classes.app);
