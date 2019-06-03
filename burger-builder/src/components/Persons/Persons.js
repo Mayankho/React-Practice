@@ -68,4 +68,4 @@ class Persons extends React.Component{
 
 
 
-export default Persons; //export defaulut you idiot!
+export default Persons; 
