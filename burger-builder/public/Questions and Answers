@@ -3,3 +3,26 @@ Episode --> 94
     * What is the difference in doing it this way as opposed to, having the root node as it was, 
     ---> What are the benefits of doing it this way.
     --->    * It doesn't do anything different, it is just an example.
+
+
+    * Pertaining to the episode that, when we
+
+
+
+* --->
+    Not getting the card look anymore after adding withClass component.
+
+
+
+
+
+Props.children Explained 
+
+        * Act as a hollow component that can swallow the guts and info of another component
+        * By wrapping it around the other component.
+
+        + ==== > simple, and chilling,
+
+Episode 96
+
+        * When aux is not imported inside of person.js it doesn't work with wrapping withClass

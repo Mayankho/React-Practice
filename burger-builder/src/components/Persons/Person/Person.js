@@ -39,4 +39,4 @@ class Person extends React.Component{
         )
     }
 }
-export default withClass(Person, classes.person);
+export default withClass(Person, classes.Person);
