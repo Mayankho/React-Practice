@@ -26,3 +26,8 @@ Props.children Explained
 Episode 96
 
         * When aux is not imported inside of person.js it doesn't work with wrapping withClass
+
+Episode 97
+        * Passing props as the spread operator in your higher order component allows you to wrap any component and 
+        -> pass whatever props i may have
+        
