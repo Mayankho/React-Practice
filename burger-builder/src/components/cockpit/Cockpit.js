@@ -29,11 +29,6 @@ const cockpit = (props) => {
             className={btnClass}
             onClick={props.clicked}>Toggle Persons</button>
       </Aux>
-
     );
 };
-// Cannot return multiple elements without a root node.
-// --> If, the similar, Test, JS, Have time.
-// Panorama, why did i write in this in the fucking code. 
-
 export default cockpit;

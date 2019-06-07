@@ -94,17 +94,19 @@ class App extends PureComponent {
   // This function acts as a on and off switch.  
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
-    this.setState({ showPersons: !doesShow,
-      toggleClicked: this.state.toggleClicked +1
-    
+    this.setState( (prevState,props) => { 
+      return {
+        showPersons: !doesShow,
+      toggleClicked: prevState.toggleClicked +1
+      }
     });
   }
+
   // So what we have is person  being  called on first then you haave the cockpit coming in hot in the second place
 
   render() {
     console.log('App.js has been rendered!');
     let persons = null;
-
 
     if (this.state.showPersons) {
       persons = (
@@ -128,8 +130,6 @@ class App extends PureComponent {
           clicked={this.togglePersonsHandler} />
         {persons}
       </Aux>
-      
-      
     );
   }
 }
