@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'props-types';
 
 import classes from './Person.css';
 import withClass from '../../hoc/withClass';
 import Aux from '../../../components/hoc/Auxilary';
+
 // If not imported you will lose the card look.
 
 
@@ -39,4 +41,10 @@ class Person extends React.Component{
         )
     }
 }
+Person.PropTypes = {
+    click: PropTypes.func , 
+    name: PropTypes.string  ,
+    age: PropTypes.number , 
+    changed: PropTypes.func
+};
 export default withClass(Person, classes.Person);
