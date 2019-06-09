@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'props-types';
+import PropTypes from 'prop-types';
 
 import classes from './Person.css';
 import withClass from '../../hoc/withClass';
@@ -11,16 +11,8 @@ import Aux from '../../../components/hoc/Auxilary';
 class Person extends React.Component{
     constructor(props) {
         super(props);
-        console.log('Peopl.js inside of construtctor()', props)
-        this.state = {
-          persons: [
-            { id: 'asfa1', name: 'Max', age: 28 },
-            { id: 'vasdf1', name: 'Manu', age: 29 },
-            { id: 'asdf11', name: 'Stephanie', age: 26 }
-          ],
-          otherState: 'some other value',
-          showPersons: false
-        }
+        console.log('Peopl.js inside of construtctor()', props);
+        this.inputElement = React.createRef();
       }
       componentWillMount() {
         console.log("People indside of component will mount()");
@@ -28,7 +20,11 @@ class Person extends React.Component{
     
       componentDidMount() {
         console.log('People is in component did mount()');
-        this.inputElement.focus();
+        if ( this.props.position === 0 ){
+          this.inputElement.current.focus();
+        }
+        // This is going to focus it to the first one.
+        
       }
     render(){
         return (      
@@ -36,7 +32,7 @@ class Person extends React.Component{
                <p onClick={this.props.click}>I'm {this.props.name} and I am {this.props.age} years old!</p>
                 <p>{this.props.children}</p>
                 <input 
-                ref= {(inp) => { this.inputElement = inp }}
+                ref= {this.inputElement}
                 type="text" 
                 onChange={this.props.changed} 
                 value={this.props.name} />
