@@ -18,7 +18,8 @@ class App extends PureComponent {
       ],
       otherState: 'some other value',
       showPersons: false,
-      toggleClicked: 0
+      toggleClicked: 0, 
+      authenticated : false
     }
   }
   
@@ -102,6 +103,10 @@ class App extends PureComponent {
     });
   }
 
+  loginHandler = () => {
+    this.setState({authenticated: true});
+  }
+
   // So what we have is person  being  called on first then you haave the cockpit coming in hot in the second place
 
   render() {
@@ -113,7 +118,8 @@ class App extends PureComponent {
         <Persons
           persons={this.state.persons}
           clicked={this.deletePersonHandler}
-          changed={this.nameChangedHandler} />
+          changed={this.nameChangedHandler}
+          isAuthenticated= {this.state.authenticated}/>
       );
     }
 
@@ -125,7 +131,7 @@ class App extends PureComponent {
       >Show Persons</button>
         <Cockpit showPersons={this.state.showPersons}
           appTitle={this.props.title}
-
+          login={this.loginHandler}
           persons={this.state.persons}
           clicked={this.togglePersonsHandler} />
         {persons}
