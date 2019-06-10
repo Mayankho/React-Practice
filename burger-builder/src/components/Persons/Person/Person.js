@@ -24,8 +24,13 @@ class Person extends React.Component{
           this.inputElement.current.focus();
         }
         // This is going to focus it to the first one.
-        
       }
+
+      focus(){
+        this.inputElement.current.focus();
+      }
+     
+
     render(){
         return (      
             <Aux>
@@ -48,4 +53,4 @@ Person.PropTypes = {
     age: PropTypes.number , 
     changed: PropTypes.func
 };
-export default withClass(Person, classes.Person);
+export default Person 

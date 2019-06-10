@@ -30,4 +30,12 @@ Episode 96
 Episode 97
         * Passing props as the spread operator in your higher order component allows you to wrap any component and 
         -> pass whatever props i may have
+
+        Episode 100 - 102 
+
+        * What exactly does ref do and wherer would we use it pratically in an application Give 2 examples in wher you  would use it 
+        * Explain hpw you would want to dynamically pick where you would want your focus to be and also, explain how i would
+        * Change it according to what i have picked using  the componnent lifecycle.
+        Lastly explain what was passed inside the higher order component and why it was passed in referemce to ref in the component 
+        
         
