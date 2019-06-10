@@ -34,6 +34,7 @@ class Person extends React.Component{
     render(){
         return (      
             <Aux>
+              {this.props.authenticated ? <p>I'm authenticated!</p> : null }
                <p onClick={this.props.click}>I'm {this.props.name} and I am {this.props.age} years old!</p>
                 <p>{this.props.children}</p>
                 <input 
@@ -47,10 +48,10 @@ class Person extends React.Component{
         )
     }
 }
-Person.PropTypes = {
+Person.propTypes = {
     click: PropTypes.func , 
     name: PropTypes.string  ,
     age: PropTypes.number , 
     changed: PropTypes.func
 };
-export default Person 
+export default withClass(Person, classes.Person);

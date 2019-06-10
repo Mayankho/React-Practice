@@ -14,7 +14,7 @@ class Persons extends React.Component{
 
   componentDidMount() {
     console.log('Persons is in component did mount');
-    this.lastPersonRef.current.focus();  
+    // this.lastPersonRef.current.focus();  
   }
 
   componentWillReceiveProps(nextProp){
@@ -52,6 +52,7 @@ class Persons extends React.Component{
       name = {person.name}
       age= {person.age}
       ref = {this.lastPersonRef}
+      authenticated= {this.props.isAuthenticated}
       key = {person.id}
       changed = {(event) => this.props.changed(event, person.id)} />
     });
