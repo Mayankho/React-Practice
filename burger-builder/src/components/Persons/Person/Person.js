@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import classes from './Person.css';
 import withClass from '../../hoc/withClass';
 import Aux from '../../../components/hoc/Auxilary';
+import  { AuthContext } from '../../../containers/App';
 
 // If not imported you will lose the card look.
 
@@ -34,7 +35,10 @@ class Person extends React.Component{
     render(){
         return (      
             <Aux>
-              {this.props.authenticated ? <p>I'm authenticated!</p> : null }
+              <AuthContext.Consumer>
+              {auth = > auth ?  <p>I'm authenticated!</p> : null }
+              </AuthContext.Consumer>
+              
                <p onClick={this.props.click}>I'm {this.props.name} and I am {this.props.age} years old!</p>
                 <p>{this.props.children}</p>
                 <input 
