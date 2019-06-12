@@ -30,13 +30,12 @@ class Person extends React.Component{
       focus(){
         this.inputElement.current.focus();
       }
-     
-
+      
     render(){
         return (      
             <Aux>
               <AuthContext.Consumer>
-              {auth = > auth ?  <p>I'm authenticated!</p> : null }
+              {auth => auth ?  <p>I'm authenticated!</p> : null }
               </AuthContext.Consumer>
               
                <p onClick={this.props.click}>I'm {this.props.name} and I am {this.props.age} years old!</p>

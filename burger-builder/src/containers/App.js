@@ -50,6 +50,18 @@ class App extends PureComponent {
       console.log('[Appp.js] has Updated and is did Update')
     }
 
+
+    static getDerivedStateFromProps(nextProps, prevState){
+      console.log('Inside, getderivedstatefromprops', nextProps,prevState)
+      // Called before render and good if you have something that needs to put props and state in sync
+      return prevState;
+    }
+
+    getSnapshotBeforeUpdate(){
+      //This is called before the dom gets updated componentUpdate
+      //Good to save the scrolling postion of the user, good to put the user back in their scrollong position 
+    }
+
   // state = {
   //   persons: [
   //     { id: 'asfa1', name: 'Max', age: 28 },
@@ -74,7 +86,8 @@ class App extends PureComponent {
     };
 
     // const person = Object.assign({}, this.state.persons[personIndex]);
-
+    //Need to  assign the linked list to the first of it's kind in the  matrix, and let the thing copy itsel
+     
     person.name = event.target.value;
 
     const persons = [...this.state.persons];
