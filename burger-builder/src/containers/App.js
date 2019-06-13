@@ -34,7 +34,7 @@ class App extends PureComponent {
   }
 
   //  shouldComponentUpdate(nextProps, nextState){
-  //  console.log("[App.js] Inside shouldComponentUpdate",nextProps,nextState)
+  //  console.log("[App.js] Inside shouldComponentUpdate",nextProps,nextState)a
   //     return nextState.persons !== this.state.persons || 
   //     nextState.showPersons !== this.state.showPersons ||
   //     nextProps.clicked !== this.props.clicked;
@@ -74,19 +74,22 @@ class App extends PureComponent {
 
 
   //onChangeHandler
+  //Questons? -> It's returning the id before, app.js gets a chance to get rendered again.
+
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
+      console.log(id, "is this getting renderes  before app.js?")
       return p.id === id;
       
     });
 
-    //Questons? -> It's returning the id before, app.js gets a chance to get rendered again.
+    
     const person = {
       ...this.state.persons[personIndex]
     };
 
     // const person = Object.assign({}, this.state.persons[personIndex]);
-    //Need to  assign the linked list to the first of it's kind in the  matrix, and let the thing copy itsel
+    //Need to  assign the linked list to the first of it's kind in the  matrix, and let the thing copy itself
      
     person.name = event.target.value;
 
