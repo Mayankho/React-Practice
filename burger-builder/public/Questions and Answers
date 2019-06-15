@@ -16,6 +16,7 @@ Episode --> 94
 
 
 
+
 Props.children Explained 
 
         * Act as a hollow component that can swallow the guts and info of another component
@@ -44,5 +45,13 @@ Episode 97
 
         Complete assesment and review to-do's 
             * Dive in to the official react documentation and complete the beginners course, To officially wrap up this section
+
+
+
+    * What is the authenticater doing? What all does it hold
+        -->
+
+
+    * Explain the css styling process for react components, made in a modular way?
         
         
