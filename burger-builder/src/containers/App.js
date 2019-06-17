@@ -122,9 +122,9 @@ class App extends PureComponent {
 
   loginHandler = () => {
     this.setState({authenticated: true});
+
   }
 
-  // So what we have is person  being  called on first then you haave the cockpit coming in hot in the second place
 
   render() {
     console.log('App.js has been rendered!');
