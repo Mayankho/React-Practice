@@ -33,15 +33,15 @@ class App extends PureComponent {
     console.log('App.js has been mounted');
   }
 
-  //  shouldComponentUpdate(nextProps, nextState){
-  //  console.log("[App.js] Inside shouldComponentUpdate",nextProps,nextState)a
-  //     return nextState.persons !== this.state.persons || 
-  //     nextState.showPersons !== this.state.showPersons ||
-  //     nextProps.clicked !== this.props.clicked;
-  //     // This checks if there is a difference 
-  //     // between the two and returns it if it remains true that something has changed
-  //     // If you remove a person it will run through the updating process.
-  //   }
+   shouldComponentUpdate(nextProps, nextState){
+   console.log("[App.js] Inside shouldComponentUpdate",nextProps,nextState)a
+      return nextState.persons !== this.state.persons || 
+      nextState.showPersons !== this.state.showPersons ||
+      nextProps.clicked !== this.props.clicked;
+      // This checks if there is a difference 
+      // between the two and returns it if it remains true that something has changed
+      // If you remove a person it will run through the updating process.
+    }
     componentWillUpdate(nextProps, nextState){
       console.log("[App.js] will update", nextProps, nextState)
     }

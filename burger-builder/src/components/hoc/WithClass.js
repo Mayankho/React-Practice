@@ -21,6 +21,7 @@ const withClass = (WrappedComponent, className) => {
     return React.forwardRef ((props, ref) => {
         return <WithClass {...props} forwardedRef = {ref } />
     } );
+    // Explain what does this do in withClass HOC?
 }
 
 export default withClass;
