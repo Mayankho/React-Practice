@@ -62,19 +62,19 @@ class App extends PureComponent {
       //Good to save the scrolling postion of the user, good to put the user back in their scrollong position 
     }
 
-  state = {
-    persons: [
-      { id: 'asfa1', name: 'Max', age: 28 },
-      { id: 'vasdf1', name: 'Manu', age: 29 },
-      { id: 'asdf11', name: 'Stephanie', age: 26 }
-    ]
-    otherState: 'some other value',
-    showPersons: false
-  }
+  // state = {
+  //   persons: [
+  //     { id: 'asfa1', name: 'Max', age: 28 },
+  //     { id: 'vasdf1', name: 'Manu', age: 29 },
+  //     { id: 'asdf11', name: 'Stephanie', age: 26 }
+  //   ]
+  //   otherState: 'some other value',
+  //   showPersons: false
+  // }
 
 
-  onChangeHandler
-  Questons? -> It's returning the id before, app.js gets a chance to get rendered again.
+  // onChangeHandler
+  // Questons? -> It's returning the id before, app.js gets a chance to get rendered again.
 
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {

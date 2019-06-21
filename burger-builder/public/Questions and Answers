@@ -34,11 +34,11 @@ Episode 97
 
         Episode 100 - 102 
 
-        * What exactly does ref do and wherer would we use it pratically in an application Give 2 examples in wher you  would use it 
+        * What exactly does ref do and where would we use it pratically in an application Give 2 examples in wher you  would use it 
         * Explain hpw you would want to dynamically pick where you would want your focus to be and also, explain how i would
         * Change it according to what i have picked using  the componnent lifecycle.
         Lastly explain what was passed inside the higher order component and why it was passed in referemce to ref in the component
-
+            --> Returning a fnction to handle references
 
 
 
@@ -49,7 +49,7 @@ Episode 97
 
 
     * What is the authenticater doing? What all does it hold
-        -->
+        --> 
 
 
     * Explain the css styling process for react components, made in a modular way?
