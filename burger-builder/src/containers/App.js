@@ -33,15 +33,15 @@ class App extends PureComponent {
     console.log('App.js has been mounted');
   }
 
-   shouldComponentUpdate(nextProps, nextState){
-   console.log("[App.js] Inside shouldComponentUpdate",nextProps,nextState)a
-      return nextState.persons !== this.state.persons || 
-      nextState.showPersons !== this.state.showPersons ||
-      nextProps.clicked !== this.props.clicked;
-      // This checks if there is a difference 
-      // between the two and returns it if it remains true that something has changed
-      // If you remove a person it will run through the updating process.
-    }
+  //  shouldComponentUpdate(nextProps, nextState){
+  //  console.log("[App.js] Inside shouldComponentUpdate",nextProps,nextState)a
+  //     return nextState.persons !== this.state.persons || 
+  //     nextState.showPersons !== this.state.showPersons ||
+  //     nextProps.clicked !== this.props.clicked;
+  //     // This checks if there is a difference 
+  //     // between the two and returns it if it remains true that something has changed
+  //     // If you remove a person it will run through the updating process.
+  //   }
     componentWillUpdate(nextProps, nextState){
       console.log("[App.js] will update", nextProps, nextState)
     }
@@ -62,19 +62,19 @@ class App extends PureComponent {
       //Good to save the scrolling postion of the user, good to put the user back in their scrollong position 
     }
 
-  // state = {
-  //   persons: [
-  //     { id: 'asfa1', name: 'Max', age: 28 },
-  //     { id: 'vasdf1', name: 'Manu', age: 29 },
-  //     { id: 'asdf11', name: 'Stephanie', age: 26 }
-  //   ]
-  //   otherState: 'some other value',
-  //   showPersons: false
-  // }
+  state = {
+    persons: [
+      { id: 'asfa1', name: 'Max', age: 28 },
+      { id: 'vasdf1', name: 'Manu', age: 29 },
+      { id: 'asdf11', name: 'Stephanie', age: 26 }
+    ]
+    otherState: 'some other value',
+    showPersons: false
+  }
 
 
-  //onChangeHandler
-  //Questons? -> It's returning the id before, app.js gets a chance to get rendered again.
+  onChangeHandler
+  Questons? -> It's returning the id before, app.js gets a chance to get rendered again.
 
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
