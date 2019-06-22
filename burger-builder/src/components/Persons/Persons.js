@@ -45,9 +45,14 @@ class Persons extends React.Component{
   
 
   render(){
-    console.log('Persons.js has been rendered again')
+    
     return this.props.persons.map( (person ,index ) => {
-      return <Person
+      
+      return (
+        console.log(person, index, 'This is what is inside of the persons map and parameters'),
+
+        <Person
+      
       click={() => this.props.clicked(index)}
       name = {person.name}
       age= {person.age}
@@ -55,10 +60,24 @@ class Persons extends React.Component{
     
       key = {person.id}
       changed = {(event) => this.props.changed(event, person.id)} />
+
+      ) 
     });
   }
 
 }  
+
+/*
+  {this.state.persons.map (person => {
+    return (
+      <Person name = {person.name} 
+      age = {person.age}
+       />
+       How does map work again?. It maps all  the data of one array into a new array, by asking for arbitit parameter then using that parameter to act as the anchor in the map functino
+       So i am getting an object back from my map, and the index as well as getting back my comments.
+       It doesn't seem as though i am gettingg back a array of  objuects but  at least getting aone object at a time insteaad
+  })}
+ */
 
 
 
