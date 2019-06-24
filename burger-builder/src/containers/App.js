@@ -78,7 +78,7 @@ class App extends PureComponent {
 
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
-      console.log(id, "is this getting renderes  before app.js?")
+      console.log(id, "is this getting rendered before app.js?")
       return p.id === id;
       
     });
@@ -157,5 +157,8 @@ class App extends PureComponent {
     );
   }
 }
+
+// ALl the other lectures will make it so you can update data in a way that, you can be proud of
+// Outputting lists of data with .map  stops the need to have to  hard code all the data over and over and over.
 
 export default withClass(App, classes.App);
